@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sigmod23-jo"
+version = "0.1.0"
+description = "Join order optimization via QUBO, packaged from the SIGMOD'23 reproduction package"
+readme = "README.md"
+license = "GPL-2.0-only"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "gurobipy",
+    "qubovert",
+    "dimod",
+    "sympy",
+    "scipy",
+]
+
+[project.optional-dependencies]
+# only needed for QUBOGenerator.generate_QUBO_for_IBMQ
+ibmq = ["qiskit-optimization", "docplex"]
+
+[tool.setuptools]
+packages = ["sigmod23_jo"]

@@ -2,6 +2,21 @@
 
 This repository contains a complete reproduction package, including code and data artifacts, for "Ready to Leap (by Co-Design)? Join Order Optimisation on Quantum Hardware", accepted at SIGMOD 2023.
 
+## Changes in this fork
+
+This is a modified version of [lfd/sigmod23-reproduction](https://github.com/lfd/sigmod23-reproduction)
+(GPL-2.0, see `LICENSE`). Changes made 2026-11-16:
+
+- Added the installable Python package `sigmod23_jo` (`pyproject.toml`) with copies of
+  `base/Scripts/QUBOGenerator.py`, `base/Scripts/Postprocessing.py` and
+  `base/Scripts/SteinbrunnQueryGenerator.py`, so the join ordering code can be used as a
+  library (`pip install -e .`, then `from sigmod23_jo import QUBOGenerator`).
+- `sigmod23_jo/QUBOGenerator.py`: does not need gurobi login since free version is sufficient, and imports
+  `qiskit_optimization` / `docplex` only inside `generate_QUBO_for_IBMQ`
+  (install with `pip install -e ".[ibmq]"` if needed).
+
+The original reproduction code in `base/` is unchanged.
+
 ## Reproduction
 
 ### Build Docker Image

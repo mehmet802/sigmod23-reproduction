@@ -2,3 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
+.DS_Store
+# Python packaging (sigmod23_jo)
+.venv/
+__pycache__/
+*.egg-info/
+build/
+dist/
